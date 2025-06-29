@@ -64,6 +64,10 @@ a {
 a:hover {
   text-decoration: underline;
 }
+.chat-controls select {
+  z-index: 999;
+  position: relative;
+}
 
 /* HOME PAGE STYLING */
 .home-container {
