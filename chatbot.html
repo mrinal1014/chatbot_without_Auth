@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MAASS Assistant</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands@0.4/hands.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils@0.3/drawing_utils.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils@0.3/camera_utils.min.js"></script>
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body class="bg-particles">
+    <!-- 🌟 Glowing Animated Blobs -->
+<div class="blob-bg">
+  <div class="blob"></div>
+  <div class="blob"></div>
+  <div class="blob"></div>
+</div>
+  <main id="chat-container">
+    <!-- Left Side: Avatar -->
+    <section class="bot-panel">
+  <video id="botVideo" autoplay muted loop playsinline>
+    <source src="images/chatbot-girl.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- 👇 Moved Instruction Box -->
+  <div id="gesture-help">
+    <h3>How to Interact with Me ✋</h3>
+    <ul>
+      <li><strong>✋ Open Hand:</strong> Say "Hello!"</li>
+      <li><strong>☝️ Point (Index Finger Up):</strong> Start Voice Input</li>
+      <li><strong>✌️ Peace Sign:</strong> Ask Gemini something cool</li>
+      <li><strong>✊ Fist:</strong> Stop Webcam / Clear Chat</li>
+      <li><strong>🤟 Three Fingers (Index + Middle + Ring):</strong> Stop Microphone</li>
+      <li><strong>🤘 Rock Sign (Index + Pinky):</strong> Restart Webcam</li>
+    </ul>
+  </div>
+</section>
+
+
+    <!-- Right Side: Chat UI -->
+    <section class="chat-ui">
+      <!-- Webcam -->
+      <div class="webcam-box">
+        <video id="webcam" autoplay muted playsinline></video>
+        <button id="webcam-btn" class="glow-btn">🎥 Toggle Webcam</button>
+      </div>
+
+      <!-- Controls -->
+      <div class="chat-controls">
+        <label for="langSelect">Language:</label>
+        <select id="langSelect">
+          <option value="en-IN">English</option>
+          <option value="hi-IN">Hindi</option>
+          <option value="bn-IN">Bengali</option>
+          <option value="es-ES">Spanish</option>
+          <option value="fr-FR">French</option>
+          <option value="de-DE">German</option>
+        </select>
+
+        <label for="assistant-mode">Mode:</label>
+        <select id="assistant-mode">
+          <option value="friendly">Friendly</option>
+          <option value="therapist">Therapist</option>
+          <option value="funny">Funny</option>
+          <option value="wise">Wise</option>
+        </select>
+      </div>
+
+      <!-- Chat Box -->
+      <div id="chat-box"></div>
+
+      <!-- Chat Input -->
+      <div class="chat-input">
+        <button id="voice-btn" class="glow-btn speak-btn">🎙️ Speak</button>
+        <input type="text" id="user-input" placeholder="Type your message..." />
+        <button id="send-btn" class="glow-btn">➤</button>
+      </div>
+    </section>
+  </main>
+
+  <audio id="response-audio" hidden></audio>
+  <div class="talking-animation"></div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const botVideo = document.getElementById("botVideo");
+      const container = document.getElementById("chat-container");
+      botVideo.addEventListener("click", () => {
+        container.classList.toggle("hidden");
+      });
+    });
+
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
