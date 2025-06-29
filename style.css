@@ -64,10 +64,6 @@ a {
 a:hover {
   text-decoration: underline;
 }
-.chat-controls select {
-  z-index: 999;
-  position: relative;
-}
 
 /* HOME PAGE STYLING */
 .home-container {
@@ -84,6 +80,11 @@ a:hover {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.chat-controls select {
+  z-index: 999;
+  position: relative;
+}
+
 .subheading {
   text-align: center;
   font-size: 1.2rem;
