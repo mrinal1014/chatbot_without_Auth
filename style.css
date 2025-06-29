@@ -56,6 +56,10 @@ body {
   max-width: 80%;
   box-shadow: 0 0 5px rgba(0, 230, 255, 0.3);
 }
+.chat-controls select {
+  z-index: 999;
+  position: relative;
+}
 
 a {
   color: #00e6ff;
