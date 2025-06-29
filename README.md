@@ -73,8 +73,8 @@ Mini Project Submission, Semester 4
 ---
 
 ## 📸 Screenshots
+![image](https://github.com/user-attachments/assets/634cee2c-4da4-458e-ad38-e17cf0660330)
 
-*(Include screenshots of the UI, chatbot in action, and hand gesture examples here if hosting on GitHub)*
 
 ---
 
